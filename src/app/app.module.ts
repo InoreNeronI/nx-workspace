@@ -8,6 +8,7 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ObservableVsPromiseComponent } from './observable-vs-promise/observable-vs-promise.component';
 import { ObservableVsSubjectComponent } from './observable-vs-subject/observable-vs-subject.component';
+import { SubjectVsReplaysubjectVsBeehaviorsubjectComponent } from './subject-vs-replaysubject-vs-beehaviorsubject/subject-vs-replaysubject-vs-beehaviorsubject.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ObservableVsSubjectComponent } from './observable-vs-subject/observable
     PromiseComponent,
     ObservableComponent,
     ObservableVsPromiseComponent,
-    ObservableVsSubjectComponent
+    ObservableVsSubjectComponent,
+    SubjectVsReplaysubjectVsBeehaviorsubjectComponent
   ],
   imports: [
     BrowserModule,
