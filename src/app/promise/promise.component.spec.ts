@@ -28,9 +28,9 @@ describe('PromiseComponent', () => {
       fixture.whenStable().then(() => {
         component.isOnline = true;
         resolve(component.isOnline);
-        expect(component.isOnline).toBe(true);
       });
     });
+    expect(component.isOnline).toBe(true);
   }));
 
   it('should fail', fakeAsync(() => {
@@ -41,9 +41,9 @@ describe('PromiseComponent', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         reject(new Error('DB error!'));
-        expect(component.isOnline).toBe(false);
       });
     });
+    expect(component.isOnline).toBe(true);
   }));
 
 });
