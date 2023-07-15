@@ -47,4 +47,19 @@ describe('HomeComponent', () => {
     component.observableClick();
     expect(router.navigate).toHaveBeenCalledWith(['/observable']);
   }));
+
+  it('should go on observablevspromise page', waitForAsync(() => {
+    component.observableVsPromiseClick();
+    expect(router.navigate).toHaveBeenCalledWith(['/observablevspromise']);
+  }));
+
+  it('should go on observableVsSubject page', waitForAsync(() => {
+    component.observableVsSubjectClick();
+    expect(router.navigate).toHaveBeenCalledWith(['/observablevssubject']);
+  }));
+
+  it('should go on subjectVsReplaysubjectVsBeehaviorsubject page', waitForAsync(() => {
+    component.subjectVsReplaysubjectVsBeehaviorsubjectClick();
+    expect(router.navigate).toHaveBeenCalledWith(['/subjectvsreplaysubjectvsbeehaviorsubject']);
+  }));
 });
