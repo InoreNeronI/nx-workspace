@@ -1,34 +1,51 @@
-import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { ComponentFixture, TestBed, inject, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router, Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { Router } from '@angular/router';
+import { ObservableComponent } from '../observable/observable.component';
+import { PromiseComponent } from '../promise/promise.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let router: Router;
+
+  const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'promise', component: PromiseComponent },
+    { path: 'observable', component: ObservableComponent },
+    { path: '**', redirectTo: 'home' }
+  ];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent]
+      declarations: [HomeComponent],
+      imports: [
+        RouterTestingModule.withRoutes(routes)
+      ]
     });
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    router = TestBed.inject(Router);
+    spyOn(router, 'navigate').and.returnValue(Promise.resolve(true));
+    router.initialNavigation();
+
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to promise page', inject([Router], (mockRouter: Router) => {
-    const spy = spyOn(mockRouter, 'navigate').and.stub();
+  it('should go on promise page', waitForAsync(() => {
     component.promiseClick();
-    expect(spy.calls.first().args[0]).toContain('/promise');
+    expect(router.navigate).toHaveBeenCalledWith(['/promise']);
   }));
 
-  it('should navigate to observable page', inject([Router], (mockRouter: Router) => {
-    const spy = spyOn(mockRouter, 'navigate').and.stub();
+  it('should go on observable page', waitForAsync(() => {
     component.observableClick();
-    expect(spy.calls.first().args[0]).toContain('/observable');
+    expect(router.navigate).toHaveBeenCalledWith(['/observable']);
   }));
 });
