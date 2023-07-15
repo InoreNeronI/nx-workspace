@@ -32,7 +32,6 @@ describe('HomeComponent', () => {
     router = TestBed.inject(Router);
     spyOn(router, 'navigate').and.returnValue(Promise.resolve(true));
     router.initialNavigation();
-
   });
 
   it('should create', () => {
