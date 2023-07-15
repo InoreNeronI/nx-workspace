@@ -20,8 +20,8 @@ export class PromiseComponent implements OnInit {
       (error: any) => {
         console.log(error);
       },
-      (complete: any) => {
-        console.log(complete);
+      () => {
+        console.log("Promise complete!");
       }
     );
   }
