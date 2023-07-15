@@ -32,8 +32,8 @@ export class PromiseComponent implements OnInit {
       setTimeout(() => {
         console.log("Recieved status value");
         this.isOnline = true;
-        // resolve(this.isOnline);
-        reject("DB error!")
+        resolve(this.isOnline);
+        // reject("DB error!")
       }, 3000);
     });
   }
