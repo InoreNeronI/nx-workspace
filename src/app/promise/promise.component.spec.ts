@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { PromiseComponent } from './promise.component';
 
@@ -18,4 +18,32 @@ describe('PromiseComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should pass', fakeAsync(() => {
+    component.ngOnInit();
+    component.checkLogic();
+    component.myPromise = new Promise<boolean>((resolve, reject) => {
+      tick(3000);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.isOnline = true;
+        resolve(component.isOnline);
+        expect(component.isOnline).toBe(true);
+      });
+    });
+  }));
+
+  it('should fail', fakeAsync(() => {
+    component.ngOnInit();
+    component.checkLogic();
+    component.myPromise = new Promise<boolean>((resolve, reject) => {
+      tick(3000);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        reject(new Error('DB error!'));
+        expect(component.isOnline).toBe(false);
+      });
+    });
+  }));
+
 });
