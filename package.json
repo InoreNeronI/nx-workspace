@@ -1,12 +1,16 @@
 {
   "name": "observable-promise-learning",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "nx serve",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration observable-promise-learning",
+    "test": "nx test",
+    "prestart": "parcel build apps/**/src/index.html --dist-dir apps/.dist",
+    "prebuild": "npm run prestart",
+    "prewatch": "npm run prestart",
+    "pretest": "npm run prestart"
   },
   "private": true,
   "dependencies": {
@@ -18,21 +22,33 @@
     "@angular/platform-browser": "^16.1.5",
     "@angular/platform-browser-dynamic": "^16.1.5",
     "@angular/router": "^16.1.5",
-    "rxjs": "7.8.1",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"
+    "@nrwl/angular": "^16.5.3",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.6.0",
+    "zone.js": "~0.13.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.4",
+    "@angular-devkit/core": "~16.1.4",
+    "@angular-devkit/schematics": "~16.1.4",
     "@angular/cli": "~16.1.4",
     "@angular/compiler-cli": "^16.1.5",
-    "@types/jasmine": "~4.3.0",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
+    "@nx/js": "16.5.3",
+    "@nx/workspace": "16.5.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "@schematics/angular": "~16.1.4",
+    "@types/jasmine": "~4.3.5",
+    "jasmine-core": "~5.0.1",
+    "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
+    "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "5.1.6"
+    "nx": "16.5.3",
+    "parcel": "^2.9.3",
+    "posthtml-extend": "^0.6.5",
+    "posthtml-include": "^1.7.4",
+    "prettier": "^3.0.0",
+    "typescript": "~5.1.6"
   }
 }
