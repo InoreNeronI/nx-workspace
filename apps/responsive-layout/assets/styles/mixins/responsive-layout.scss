@@ -1,0 +1,233 @@
+
+@use 'responsive-layout-theme' as *;
+@import 'gradient', 'photonkit/sass/base', 'photonkit/sass/utilities', 'photonkit/sass/bars', 'photonkit/sass/button-groups', 'photonkit/sass/forms', 'photonkit/sass/grid', 'photonkit/sass/images', 'photonkit/sass/lists', 'photonkit/sass/tables', 'photonkit/sass/tabs';
+
+@mixin
+responsive-layout() {
+  // LAYOUT
+  body, .window {
+    color: $primary-color;
+  }
+  .window {
+    overflow: hidden;
+    box-shadow: 0 .65rem 2.25rem $primary-color;
+    header {
+      * {
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .title {
+        @include gradient($primary-color, $chrome-color);
+        background-size: cover;
+        margin: 0;
+        * {
+          vertical-align: bottom;
+        }
+      }
+    }
+    .workspace {
+      //background-image: url('../../assets/svg/#{$variant}.svg');
+      @include gradient($chrome-color, $primary-color);
+      background-size: cover;
+      .sidebar {
+        @include gradient($primary-color, $chrome-color);
+        background-size: cover;
+        color: $chrome-color;
+        flex: 0;
+      }
+    }
+    footer {
+      @include gradient($primary-color, $chrome-color);
+      background-size: cover;
+      box-shadow: unset;
+      border: unset;
+      font-size: 1rem;
+      min-height: unset;
+      * {
+        font-size: 1rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  // NAVIGATION
+  .nav-group {
+    .nav-group-title {
+      color: $chrome-color;
+      font-size: calc($font-size-default * .65);
+      font-weight: $font-weight-default;
+      margin: 0;
+      padding: 10px 10px 2px;
+      text-align: center;
+    }
+    .nav-group-item {
+      color: $chrome-color;
+      cursor: $cursor-action;
+      display: block;
+      font-size: calc($font-size-default * .85);
+      overflow: hidden;
+      padding: 2px 10px 2px 25px;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &:active, &.active {
+        @include gradient($chrome-color, $primary-color);
+        background-size: cover;
+        color: $primary-color;
+      }
+      * {
+        cursor: $cursor-action;
+        font-size: inherit;
+      }
+      i {
+        font-size: $font-size-default;
+      }
+    }
+    .nav-group-divisor {
+      margin: .5rem;
+    }
+  }
+  // TOOLBAR
+  .toolbar-header {
+    background: $chrome-color linear-gradient($chrome-color 0%, $chrome-color 50%, $primary-color 100%);
+    box-shadow: inset 0 1px $chrome-color;
+    .toolbar-actions {
+      padding-bottom: 0;
+    }
+  }
+  // ANCHORS & BUTTONS
+  .btn {
+    border: 1px solid transparent;
+    border-radius: $default-border-radius;
+    box-shadow: 0 1px 1px rgba(0,0,0,.06);
+    height: 1.65rem;
+    &.theme {
+      font-family: $font-family-default;
+      max-width: 4.4rem;
+      option {
+        background-color: $chrome-color;
+        color: $primary-color;
+        &:active {
+          background-color: $primary-color;
+          color: $chrome-color;
+        }
+      }
+    }
+  }
+  // Normal buttons
+  .btn-default {
+    @include gradient($primary-color, $chrome-color);
+    background-size: cover;
+    color: $chrome-color;
+    border-top-color: $dark-border-color;
+    border-right-color: $dark-border-color;
+    border-bottom-color: $darker-bottom-border-color;
+    border-left-color: $dark-border-color;
+    &:active {
+      @include gradient($chrome-color, $primary-color);
+      background-size: cover;
+      color: $primary-color;
+    }
+  }
+  // Button variations
+  .btn-primary, .btn-positive, .btn-negative, .btn-warning {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }
+  // For primary buttons
+  .btn-primary {
+    @include gradient(#6eb4f7, #1a82fb);
+    background-size: cover;
+    border-color: #388df8;
+    border-bottom-color: darken(#388df8, 15%);
+    &:active {
+      @include gradient(darken(#6eb4f7, 10%), darken(#1a82fb, 10%));
+      background-size: cover;
+    }
+  }
+  // For positive buttons
+  .btn-positive {
+    @include gradient(lighten($positive-color, 10%), darken($positive-color, 10%));
+    background-size: cover;
+    border-color: darken($positive-color, 10%);
+    border-bottom-color: darken($positive-color, 15%);
+    &:active {
+      @include gradient($positive-color, darken($positive-color, 15%));
+      background-size: cover;
+    }
+  }
+  // For negative actions
+  .btn-negative {
+    @include gradient(lighten($negative-color, 10%), darken($negative-color, 10%));
+    background-size: cover;
+    border-color: darken($negative-color, 10%);
+    border-bottom-color: darken($negative-color, 15%);
+    &:active {
+      @include gradient($negative-color, darken($negative-color, 15%));
+      background-size: cover;
+    }
+  }
+  // For warning actions
+  .btn-warning {
+    @include gradient(lighten($warning-color, 10%), darken($warning-color, 10%));
+    background-size: cover;
+    border-color: darken($warning-color, 10%);
+    border-bottom-color: darken($warning-color, 15%);
+    &:active {
+      @include gradient($warning-color, darken($warning-color, 15%));
+      background-size: cover;
+    }
+  }
+  // TABLES
+  .table-striped {
+    font-size: calc($font-size-default * .85);
+    thead {
+      color: $primary-color;
+      font-weight: bold;
+      tr {
+        th {
+          @include gradient($chrome-color, $primary-color);
+          background-size: cover;
+          color: $primary-color;
+          cursor: $cursor-action;
+          &:active {
+            @include gradient($primary-color, $chrome-color);
+            background-size: cover;
+            color: $chrome-color;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          cursor: $cursor-action;
+        }
+      }
+      tr:nth-child(even), tr:active:nth-child(odd) {
+        td {
+          @include gradient($chrome-color, $primary-color);
+          background-size: cover;
+          color: $primary-color;
+        }
+      }
+      tr:nth-child(odd), tr:active:nth-child(even) {
+        td {
+          @include gradient($primary-color, $chrome-color);
+          background-size: cover;
+          color: $chrome-color;
+        }
+      }
+    }
+    tfoot {
+      tr {
+        th {
+          @include gradient($primary-color, $chrome-color);
+          background-size: cover;
+          border-bottom: unset;
+          color: $chrome-color;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

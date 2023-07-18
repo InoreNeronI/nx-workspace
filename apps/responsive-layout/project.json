@@ -1,0 +1,80 @@
+{
+  "name": "responsive-layout",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "",
+  "sourceRoot": "apps/responsive-layout/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/responsive-layout",
+        "index": "apps/.dist/responsive-layout/src/index.html",
+        "main": "apps/responsive-layout/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/responsive-layout/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
+        "styles": ["apps/responsive-layout/assets/styles/responsive-layout.scss"],
+        "scripts": [{"input": "apps/responsive-layout/assets/scripts/responsive-layout.js"}]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "responsive-layout:build:production"
+        },
+        "development": {
+          "browserTarget": "responsive-layout:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "responsive-layout:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "buildTarget": "responsive-layout:build",
+        "tsConfig": "apps/responsive-layout/tsconfig.spec.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
+        "styles": ["apps/responsive-layout/assets/styles/responsive-layout.scss"],
+        "scripts": [{"input": "apps/responsive-layout/assets/scripts/responsive-layout.js"}]
+      }
+    }
+  }
+}

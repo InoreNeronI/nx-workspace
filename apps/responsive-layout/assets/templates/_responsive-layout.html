@@ -1,0 +1,56 @@
+<div class="window">
+  <header class="toolbar toolbar-header">
+    <div class="title"><marquee behavior="alternate" direction="right">💥</marquee></div>
+    <div class="toolbar-actions">
+      <button class="btn btn-default icon" form="actions" title="Hello world!" type="submit">
+        <img src="favicon.ico" alt="favicon" height="22" width="22"><span> Hello world!</span>
+      </button><!--
+        <div class="btn-group">
+            <button class="btn btn-default" title="Left"><i class="bi bi-arrow-left-short"></i></button>
+            <button class="btn btn-default" title="Right"><i class="bi bi-arrow-right-short"></i></button>
+        </div>-->
+      <button class="pull-right btn btn-default screen" title="Fullscreen or normal screen"><i class="bi bi-arrows-angle-expand"></i></button>
+      <select class="pull-right btn btn-default theme" title="Color theme">
+        <option value="night" title="Night">Night</option>
+        <option value="earth" title="Earth">Earth</option>
+        <option value="water" title="Water">Water</option>
+        <option value="high" title="High contrast">High contrast</option>
+      </select>
+      <button class="pull-right btn btn-default toggle" title="Invert colors"><i class="bi bi-toggle2-on"></i></button>
+      <a class="pull-right btn btn-default refresh" title="Refresh" target="_self" href="?r"><i class="bi bi-bootstrap-reboot"></i></a>
+    </div>
+    <form id="actions" action="/"></form>
+  </header>
+  <div class="window-content">
+    <div class="pane-group workspace">
+      <aside class="pane pane-sm sidebar">
+        <nav class="nav-group">
+          <h5 class="nav-group-title">Places</h5>
+          <hr class="nav-group-divisor">
+          <div class="nav-group-item" title="Home"><i class="bi bi-house-gear"></i><span> Home</span></div>
+          <div class="nav-group-item" title="Documents"><i class="bi bi-folder2-open"></i><span> Documents</span></div>
+          <div class="nav-group-item" title="Downloads"><i class="bi bi-download"></i><span> Downloads</span></div>
+          <div class="nav-group-item" title="Desktop"><i class="bi bi-cloud"></i><span> Desktop</span></div>
+        </nav>
+      </aside>
+      <div class="pane">
+        <table class="table-striped">
+          <thead>
+          <tr><th>Name</th><th>Kind</th><th>Date Modified</th><th>Author</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>index.html</td><td>HTML</td><td>Yesterday</td><td>developit</td></tr>
+          <tr><td>bundle.js</td><td>JavaScript</td><td>10:01 am</td><td>developit</td></tr>
+          <tr><td>photon.css</td><td>CSS</td><td>9:15 am</td><td>connors</td></tr>
+          </tbody>
+          <tfoot>
+          <tr><th colspan="4">3 items</th></tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer class="toolbar toolbar-footer">
+    <marquee behavior="alternate" class="title">💯</marquee>
+  </footer>
+</div>

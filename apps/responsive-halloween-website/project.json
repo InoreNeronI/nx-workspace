@@ -1,0 +1,102 @@
+{
+  "name": "responsive-halloween-website",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "",
+  "sourceRoot": "apps/responsive-halloween-website/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/responsive-halloween-website",
+        "index": "apps/.dist/responsive-halloween-website/src/index.html",
+        "main": "apps/responsive-halloween-website/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/responsive-halloween-website/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
+        "styles": [
+          "node_modules/boxicons/css/animations.css",
+          "node_modules/boxicons/css/boxicons.css",
+          "node_modules/boxicons/css/transformations.css",
+          "node_modules/swiper/swiper.scss",
+          "apps/responsive-halloween-website/assets/styles/responsive-halloween-website.scss"
+        ],
+        "scripts": [{
+          "input": "node_modules/boxicons/dist/boxicons.js"}, {
+          "input": "node_modules/scrollreveal/dist/scrollreveal.js"}, {
+          "input": "node_modules/swiper/swiper-bundle.js"}, {
+          "input": "apps/responsive-halloween-website/assets/scripts/responsive-halloween-website.js"
+        }]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "responsive-halloween-website:build:production"
+        },
+        "development": {
+          "browserTarget": "responsive-halloween-website:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "responsive-halloween-website:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "buildTarget": "responsive-halloween-website:build",
+        "tsConfig": "apps/responsive-halloween-website/tsconfig.spec.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
+        "styles": [
+          "node_modules/boxicons/css/animations.css",
+          "node_modules/boxicons/css/boxicons.css",
+          "node_modules/boxicons/css/transformations.css",
+          "node_modules/swiper/swiper.scss",
+          "apps/responsive-halloween-website/assets/styles/responsive-halloween-website.scss"
+        ],
+        "scripts": [{
+          "input": "node_modules/boxicons/dist/boxicons.js"}, {
+          "input": "node_modules/scrollreveal/dist/scrollreveal.js"}, {
+          "input": "node_modules/swiper/swiper-bundle.js"}, {
+          "input": "apps/responsive-halloween-website/assets/scripts/responsive-halloween-website.js"
+        }]
+      }
+    }
+  }
+}

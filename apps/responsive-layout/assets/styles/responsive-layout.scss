@@ -1,0 +1,169 @@
+
+@import 'font', 'icon';
+
+/*=============== Theme variables ===============*/
+// Night
+$color-night-dark: #37474f;
+$color-night-light: #dee4e7;
+// Earth
+$color-earth-dark: #5c4637;
+$color-earth-light: #e0c39a;
+// Water
+$color-water-dark: #27374f;
+$color-water-light: #a3b9c8;
+// High contrast
+$color-high-dark: #222;
+$color-high-light: #fff;
+
+/*=============== Other variables ===============*/
+$cursor-action: pointer;
+$line-height-default: 1.4;
+
+/* Photon
+  @see https://github.com/connors/photon */
+@import 'photonkit/sass/mixins', 'mixins/responsive-layout', 'mixins/responsive-layout-theme';
+
+:root {
+  @import 'photonkit/sass/appify';
+  // THEMING
+  @if variable-exists(color-night-dark) and variable-exists(color-night-light) {
+    &.inset.night {
+      @include responsive-layout-theme($color-night-dark, $color-night-light);
+      @include responsive-layout();
+    }
+    &.reverse.night {
+      @include responsive-layout-theme($color-night-light, $color-night-dark);
+      @include responsive-layout();
+    }
+  }
+  @if variable-exists(color-earth-dark) and variable-exists(color-earth-light) {
+    &.inset.earth {
+      @include responsive-layout-theme($color-earth-dark, $color-earth-light);
+      @include responsive-layout();
+    }
+    &.reverse.earth {
+      @include responsive-layout-theme($color-earth-light, $color-earth-dark);
+      @include responsive-layout();
+    }
+  }
+  @if variable-exists(color-water-dark) and variable-exists(color-water-light) {
+    &.inset.water {
+      @include responsive-layout-theme($color-water-dark, $color-water-light);
+      @include responsive-layout();
+    }
+    &.reverse.water {
+      @include responsive-layout-theme($color-water-light, $color-water-dark);
+      @include responsive-layout();
+    }
+    @if variable-exists(color-high-dark) and variable-exists(color-high-light) {
+      &.inset.high {
+        @include responsive-layout-theme($color-high-dark, $color-high-light);
+        @include responsive-layout();
+      }
+      &.reverse.high {
+        @include responsive-layout-theme($color-high-light, $color-high-dark);
+        @include responsive-layout();
+      }
+    }
+  }
+  .btn {
+    cursor: $cursor-action;
+    display: inline-block;
+    padding: 3px 8px;
+    margin-bottom: 0;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &.icon {
+      padding-left: 0.6rem;
+      img {
+        vertical-align: text-top;
+      }
+    }
+    * {
+      cursor: $cursor-action;
+      font-size: $font-size-default;
+    }
+    i {
+      vertical-align: middle;
+    }
+    span {
+      font-family: $font-family-default;
+      vertical-align: text-bottom;
+    }
+  }
+  // Normal screen size
+  &.normal {
+    .btn {
+      &.icon {
+        max-width: unset;
+      }
+      span {
+        visibility: visible;
+      }
+    }
+    header .title {
+      visibility: visible;
+    }
+    .sidebar {
+      .nav-group-title {
+        visibility: visible;
+      }
+      .nav-group-item {
+        padding: initial;
+        span {
+          visibility: visible;
+        }
+      }
+    }
+    footer {
+      line-height: 1;
+      visibility: visible;
+    }
+  }
+  // Fullscreen size
+  &.fullscreen {
+    .btn {
+      &.icon {
+        max-width: 2.25rem;
+      }
+      span {
+        visibility: hidden;
+      }
+    }
+    header .title {
+      position: absolute;
+      visibility: hidden;
+    }
+    .sidebar {
+      min-width: 2.75rem;
+      .nav-group {
+        .nav-group-title {
+          height: 0;
+          padding: 0;
+          visibility: hidden;
+        }
+        .nav-group-item {
+          padding: 0 .7rem;
+          span {
+            visibility: hidden;
+          }
+        }
+        .nav-group-divisor {
+          margin: 0;
+          visibility: hidden;
+        }
+      }
+    }
+    footer {
+      line-height: 0;
+      visibility: hidden;
+    }
+  }
+}
