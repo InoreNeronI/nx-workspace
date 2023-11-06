@@ -1,0 +1,116 @@
+
+@use 'sass:list';
+@use 'sass:map';
+
+// Define "4 Elements" color names and values plus forest and high-contrast
+$forest: ('dark': #3e6b4f, 'light': #8fbf9f) !default;
+$fire: ('dark': #ff4500, 'light': #ff8c00) !default;
+$earth: ('dark': #ffc154, 'light': #f5d76e) !default;
+$air: ('dark': #00bcd4, 'light': #e0f2f1) !default;
+$water: ('dark': #0099cc, 'light': #66ccff) !default;
+$high: ('dark': #222, 'light': #fff) !default;
+
+// Get random color pair
+//$color: list.nth(($forest, $fire, $earth, $air, $water, $high), random(list.length(forest fire earth air water high))) !default;
+
+// @see https://github.com/bedimcode/responsive-halloween-website/blob/main/assets/scss/config/_variables.scss
+:root {
+  --header-height: 3.5rem;
+  // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --dropdown-height: 0;
+  --rotate-arrow: 0;
+  --translate-value: 0;
+  --list-opacity: 0;
+  --transition-time: 0.4s;
+  --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 1.4rem;
+  --list-button-height: 1.8rem;
+  --floating-icon-size: 26;
+  --floating-icon-top: 0;
+  --floating-icon-left: 0;
+
+  /*========== Colors ==========*/
+  &.forest {
+    --color-dark: #{map.get($forest, 'dark')};
+    --color-light: #{map.get($forest, 'light')};
+  }
+  &.fire {
+    --color-dark: #{map.get($fire, 'dark')};
+    --color-light: #{map.get($fire, 'light')};
+  }
+  &.earth {
+    --color-dark: #{map.get($earth, 'dark')};
+    --color-light: #{map.get($earth, 'light')};
+  }
+  &.air {
+    --color-dark: #{map.get($air, 'dark')};
+    --color-light: #{map.get($air, 'light')};
+  }
+  &.water {
+    --color-dark: #{map.get($water, 'dark')};
+    --color-light: #{map.get($water, 'light')};
+  }
+  &.high {
+    --color-dark: #{map.get($high, 'dark')};
+    --color-light: #{map.get($high, 'light')};
+  }
+  --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --border-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
+  --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
+  --container-color-repeating: repeating-linear-gradient(
+      135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
+      var(--color-light),
+      var(--color-light) 10px,
+      var(--color-dark) 10px,
+      var(--color-dark) 20px /* determines size */
+  );
+  --hue: 14;
+  --first-color: hsl(var(--hue), 91%, 54%);
+  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --title-color: hsl(var(--hue), 4%, 100%);
+  --text-color: hsl(var(--hue), 4%, 85%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --text-active: var(--text-color); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+
+  /*========== Font and typography ==========*/
+  --body-font: #{$font-family};
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.3333rem;
+  --h3-font-size: #{$font-size};
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  // Responsive typography
+  @media screen and (min-width: 992px) {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.3333rem;
+    --normal-font-size: #{$font-size};
+    --small-font-size: .938rem;
+    --smaller-font-size: .813rem;
+  }
+
+  /*========== Font weight ==========*/
+  --font-medium: #{$font-weight};
+  --font-semi-bold: #{$font-weight};
+  --font-black: #{$font-weight};
+
+  /*========== Margin bottom ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}

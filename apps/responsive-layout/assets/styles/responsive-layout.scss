@@ -1,19 +1,21 @@
 
+@use 'sass:map';
+
 @import 'font', 'icon';
 
 /*=============== Theme variables ===============*/
-// Night
-$color-night-dark: #37474f;
-$color-night-light: #dee4e7;
+// Forest
+$forest: ('dark': #838149, 'light': #588349) !default;
+// Fire
+$fire: ('dark': #834949, 'light': #ff8c00) !default;
 // Earth
-$color-earth-dark: #5c4637;
-$color-earth-light: #e0c39a;
+$earth: ('dark': #5c4637, 'light': #e0c39a) !default;
+// Air
+$air: ('dark': #27374f, 'light': #a3b9c8) !default;
 // Water
-$color-water-dark: #27374f;
-$color-water-light: #a3b9c8;
+$water: ('dark': #005e74, 'light': #00bcd4) !default;
 // High contrast
-$color-high-dark: #222;
-$color-high-light: #fff;
+$high: ('dark': #222, 'light': #fff) !default;
 
 /*=============== Other variables ===============*/
 $cursor-action: pointer;
@@ -26,44 +28,70 @@ $line-height-default: 1.4;
 :root {
   @import 'photonkit/sass/appify';
   // THEMING
-  @if variable-exists(color-night-dark) and variable-exists(color-night-light) {
-    &.inset.night {
-      @include responsive-layout-theme($color-night-dark, $color-night-light);
+  // Forest
+  @if variable-exists(forest) and variable-exists(forest) {
+    &.inset.forest {
+      @include responsive-layout-theme(#{map.get($forest, 'dark')}, #{map.get($forest, 'light')});
       @include responsive-layout();
     }
-    &.reverse.night {
-      @include responsive-layout-theme($color-night-light, $color-night-dark);
+    &.reverse.forest {
+      @include responsive-layout-theme(#{map.get($forest, 'light')}, #{map.get($forest, 'dark')});
       @include responsive-layout();
     }
   }
-  @if variable-exists(color-earth-dark) and variable-exists(color-earth-light) {
+  // Fire
+  @if variable-exists(fire) and variable-exists(fire) {
+    &.inset.fire {
+      @include responsive-layout-theme(#{map.get($fire, 'dark')}, #{map.get($fire, 'light')});
+      @include responsive-layout();
+    }
+    &.reverse.fire {
+      @include responsive-layout-theme(#{map.get($fire, 'light')}, #{map.get($fire, 'dark')});
+      @include responsive-layout();
+    }
+  }
+  // Earth
+  @if variable-exists(earth) and variable-exists(earth) {
     &.inset.earth {
-      @include responsive-layout-theme($color-earth-dark, $color-earth-light);
+      @include responsive-layout-theme(#{map.get($earth, 'dark')}, #{map.get($earth, 'light')});
       @include responsive-layout();
     }
     &.reverse.earth {
-      @include responsive-layout-theme($color-earth-light, $color-earth-dark);
+      @include responsive-layout-theme(#{map.get($earth, 'light')}, #{map.get($earth, 'dark')});
       @include responsive-layout();
     }
   }
-  @if variable-exists(color-water-dark) and variable-exists(color-water-light) {
+  // Air
+  @if variable-exists(air) and variable-exists(air) {
+    &.inset.air {
+      @include responsive-layout-theme(#{map.get($air, 'dark')}, #{map.get($air, 'light')});
+      @include responsive-layout();
+    }
+    &.reverse.air {
+      @include responsive-layout-theme(#{map.get($air, 'light')}, #{map.get($air, 'dark')});
+      @include responsive-layout();
+    }
+  }
+  // Water
+  @if variable-exists(water) and variable-exists(water) {
     &.inset.water {
-      @include responsive-layout-theme($color-water-dark, $color-water-light);
+      @include responsive-layout-theme(#{map.get($water, 'dark')}, #{map.get($water, 'light')});
       @include responsive-layout();
     }
     &.reverse.water {
-      @include responsive-layout-theme($color-water-light, $color-water-dark);
+      @include responsive-layout-theme(#{map.get($water, 'light')}, #{map.get($water, 'dark')});
       @include responsive-layout();
     }
-    @if variable-exists(color-high-dark) and variable-exists(color-high-light) {
-      &.inset.high {
-        @include responsive-layout-theme($color-high-dark, $color-high-light);
-        @include responsive-layout();
-      }
-      &.reverse.high {
-        @include responsive-layout-theme($color-high-light, $color-high-dark);
-        @include responsive-layout();
-      }
+  }
+  // High contrast
+  @if variable-exists(high) and variable-exists(high) {
+    &.inset.high {
+      @include responsive-layout-theme(#{map.get($high, 'dark')}, #{map.get($high, 'light')});
+      @include responsive-layout();
+    }
+    &.reverse.high {
+      @include responsive-layout-theme(#{map.get($high, 'light')}, #{map.get($high, 'dark')});
+      @include responsive-layout();
     }
   }
   .btn {
@@ -81,6 +109,7 @@ $line-height-default: 1.4;
       box-shadow: none;
     }
     &.icon {
+      float: left;
       padding-left: 0.6rem;
       img {
         vertical-align: text-top;
@@ -102,9 +131,12 @@ $line-height-default: 1.4;
   &.normal {
     .btn {
       &.icon {
+        align-items: center;
+        display: flex;
         max-width: unset;
       }
       span {
+        margin-left: .5rem;
         visibility: visible;
       }
     }

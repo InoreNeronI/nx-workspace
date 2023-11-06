@@ -1,10 +1,10 @@
 {
   "plugins": {
     "posthtml-extend": {
-      "root": "templates"
+      "root": "apps"
     },
     "posthtml-include": {
-      "root": "templates"
+      "root": "apps"
     }
   }
 }

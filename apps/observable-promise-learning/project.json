@@ -14,7 +14,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "options": {
         "outputPath": "dist/apps/observable-promise-learning",
-        "index": "apps/.dist/index.html",
+        "index": "apps/.dist/observable-promise-learning/src/index.html",
         "main": "apps/observable-promise-learning/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/observable-promise-learning/tsconfig.app.json",

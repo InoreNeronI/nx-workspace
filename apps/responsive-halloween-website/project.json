@@ -22,13 +22,13 @@
           "node_modules/boxicons/css/boxicons.css",
           "node_modules/boxicons/css/transformations.css",
           "node_modules/swiper/swiper.scss",
-          "apps/responsive-halloween-website/assets/styles/responsive-halloween-website.scss"
+          "apps/responsive-halloween-website/assets/scss/responsive-halloween-website.scss"
         ],
         "scripts": [{
           "input": "node_modules/boxicons/dist/boxicons.js"}, {
           "input": "node_modules/scrollreveal/dist/scrollreveal.js"}, {
           "input": "node_modules/swiper/swiper-bundle.js"}, {
-          "input": "apps/responsive-halloween-website/assets/scripts/responsive-halloween-website.js"
+          "input": "apps/responsive-halloween-website/assets/js/responsive-halloween-website.js"
         }]
       },
       "configurations": {

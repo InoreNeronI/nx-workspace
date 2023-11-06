@@ -1,6 +1,5 @@
 
-@mixin
-responsive-layout-theme($color-dark, $color-light) {
+@mixin responsive-layout-theme($color-dark, $color-light) {
   // Type
   // --------------------------------------------------
   $font-path: 'https://cdnjs.cloudflare.com/ajax/libs/photon/0.1.2-alpha/fonts/' !global;
@@ -13,7 +12,7 @@ responsive-layout-theme($color-dark, $color-light) {
   $chrome-color: $color-light !global;
 
   // Copy
-  $gray-color: darken($color-light, 40%) !global;
+  $gray-color: #808080 !global;
 
   // Borders
   $border-color: $color-light !global;
@@ -29,7 +28,7 @@ responsive-layout-theme($color-dark, $color-light) {
 
   // Focus and active colors
   $active-color: $color-dark !global;
-  $focus-input-color: lighten($color-dark, 10%) !global;
+  $focus-input-color: #a9a9a9 !global;
 
   // Other
   // --------------------------------------------------

@@ -1,4 +1,4 @@
-### [Responsive Halloween Website 🎃](https://github.com/bedimcode/responsive-halloween-website)
+## Responsive Halloween Website 🎃
 
 - Responsive Halloween Website Using HTML, CSS & JavaScript.
 - Contains animations when scrolling.
@@ -7,8 +7,6 @@
 - Developed first with the Mobile First methodology, then for desktop.
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-To start the development server run `npm start responsive-halloween-website`. Open your browser and navigate to http://localhost:4200/. Happy coding!
+### Join the [Bedimcode](https://www.youtube.com/c/Bedimcode) channel to see more videos like this:
 
-![halloween](/preview.png)
-
-#### [Watch it on youtube](https://youtu.be/lgo1CEPZoxg)
+[![Create a Responsive Halloween Website Design Using HTML CSS & JavaScript 🎃](https://raw.githubusercontent.com/InoreNeronI/responsive-landing-page/main/preview.png)](https://youtu.be/lgo1CEPZoxg "Create a Responsive Halloween Website Design Using HTML CSS & JavaScript 🎃")

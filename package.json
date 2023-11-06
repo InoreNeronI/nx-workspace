@@ -14,46 +14,58 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.1.5",
-    "@angular/common": "^16.1.5",
-    "@angular/compiler": "^16.1.5",
-    "@angular/core": "^16.1.5",
-    "@angular/forms": "^16.1.5",
-    "@angular/platform-browser": "^16.1.5",
-    "@angular/platform-browser-dynamic": "^16.1.5",
-    "@angular/router": "^16.1.5",
-    "@nrwl/angular": "^16.5.3",
-    "bootstrap-icons": "^1.10.5",
+    "@angular/animations": "^16.2.12",
+    "@angular/common": "^16.2.12",
+    "@angular/compiler": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/forms": "^16.2.12",
+    "@angular/platform-browser": "^16.2.12",
+    "@angular/platform-browser-dynamic": "^16.2.12",
+    "@angular/router": "^16.2.12",
+    "@nrwl/angular": "^17.0.3",
+    "bootstrap-icons": "^1.11.1",
     "boxicons": "^2.1.4",
     "photonkit": "^0.1.2",
     "rxjs": "~7.8.1",
     "scrollreveal": "^4.0.9",
-    "swiper": "^10.0.4",
-    "tslib": "^2.6.0",
-    "zone.js": "~0.13.1"
+    "swiper": "^11.0.3",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.1.4",
-    "@angular-devkit/core": "~16.1.4",
-    "@angular-devkit/schematics": "~16.1.4",
-    "@angular/cli": "~16.1.4",
-    "@angular/compiler-cli": "^16.1.5",
-    "@nx/js": "16.5.3",
-    "@nx/workspace": "16.5.3",
-    "@parcel/transformer-sass": "^2.9.3",
-    "@schematics/angular": "~16.1.4",
-    "@types/jasmine": "~4.3.5",
-    "jasmine-core": "~5.0.1",
+    "@angular-devkit/build-angular": "^16.2.9",
+    "@angular-devkit/core": "~16.2.9",
+    "@angular-devkit/schematics": "~16.2.9",
+    "@angular/cli": "~16.2.9",
+    "@angular/compiler-cli": "^16.2.12",
+    "@nx/js": "17.0.3",
+    "@nx/workspace": "17.0.3",
+    "@parcel/transformer-sass": "^2.10.2",
+    "@schematics/angular": "~16.2.9",
+    "@types/jasmine": "~5.1.1",
+    "jasmine-core": "~5.1.1",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "nx": "16.5.3",
-    "parcel": "^2.9.3",
+    "nx": "17.0.3",
+    "parcel": "^2.10.2",
     "posthtml-extend": "^0.6.5",
     "posthtml-include": "^1.7.4",
-    "prettier": "^3.0.0",
-    "typescript": "~5.1.6"
+    "prettier": "^3.0.3"
+  },
+  "alias": {
+    "scrollreveal": {
+      "global": "ScrollReveal"
+    },
+    "swiper": {
+      "global": "Swiper"
+    }
+  },
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
   }
 }

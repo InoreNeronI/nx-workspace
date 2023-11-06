@@ -25,10 +25,10 @@ document.querySelector('.screen').onclick = () => {
 setScreen(storage.getItem('screen') || 'normal');
 
 const chooser_theme = document.querySelector('.theme');
-chooser_theme.value = storage.getItem('theme') || 'night';
+chooser_theme.value = storage.getItem('theme') || 'high';
 chooser_theme.onchange = e => {
   storage.setItem('theme', e.target.value);
-  let themes = ['night', 'earth', 'water', 'high'];
+  let themes = ['fire', 'earth', 'air', 'water', 'high'];
   themes.splice(themes.indexOf(e.target.value), 1);
   themes.forEach(theme=> root.classList.remove(theme));
   root.classList.add(e.target.value);
