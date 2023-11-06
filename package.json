@@ -5,11 +5,9 @@
     "ng": "ng",
     "start": "nx serve",
     "build": "nx build",
-    "watch": "nx build --watch --configuration observable-promise-learning",
     "test": "nx test",
     "prestart": "parcel build apps/**/src/index.html --dist-dir apps/.dist",
     "prebuild": "npm run prestart",
-    "prewatch": "npm run prestart",
     "pretest": "npm run prestart"
   },
   "private": true,
