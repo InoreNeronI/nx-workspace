@@ -1,13 +1,13 @@
 {
-  "name": "observable-promise-learning",
+  "name": "nx-workspace",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "prestart": "prettier . --write && parcel build apps/**/src/index.html --dist-dir apps/.dist",
-    "prebuild": "npm run prestart",
+    "prestart": "prettier . --write && parcel build apps/responsive-layout/src/index.html --dist-dir apps/.dist/responsive-layout",
+    "prebuild": "prettier . --write && parcel build apps/responsive-layout/src/index.html --dist-dir apps/.dist/responsive-layout --public-url /nx-workspace",
     "pretest": "npm run prestart"
   },
   "private": true,

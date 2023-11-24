@@ -11,12 +11,18 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/responsive-layout",
-        "index": "apps/.dist/responsive-layout/src/index.html",
+        "index": "apps/.dist/responsive-layout/index.html",
         "main": "apps/responsive-layout/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/responsive-layout/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }],
+        "assets": [
+          {
+            "glob": "*.ico",
+            "input": "apps/.dist/responsive-layout",
+            "output": ""
+          }
+        ],
         "styles": [
           "apps/responsive-layout/assets/styles/responsive-layout.scss"
         ],
@@ -77,7 +83,13 @@
         "buildTarget": "responsive-layout:build",
         "tsConfig": "apps/responsive-layout/tsconfig.spec.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }],
+        "assets": [
+          {
+            "glob": "*.ico",
+            "input": "apps/.dist/responsive-layout",
+            "output": ""
+          }
+        ],
         "styles": [
           "apps/responsive-layout/assets/styles/responsive-layout.scss"
         ],

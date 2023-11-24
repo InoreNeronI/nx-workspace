@@ -69,8 +69,8 @@ new URL(document.location).searchParams.forEach((value, key) => {
       //console.log('refresh screen');
       // TODO refresh
       break; /*
-        default:
-            console.log('no url parameters');
-            break;*/
+    default:
+        console.log('no url parameters');
+        break;*/
   }
 });
