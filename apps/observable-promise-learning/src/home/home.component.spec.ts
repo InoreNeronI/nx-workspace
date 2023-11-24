@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, inject, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  inject,
+  waitForAsync,
+} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router, Routes } from '@angular/router';
 
@@ -15,7 +20,7 @@ describe('HomeComponent', () => {
     { path: 'home', component: HomeComponent },
     { path: 'promise', component: PromiseComponent },
     { path: 'observable', component: ObservableComponent },
-    { path: '**', redirectTo: 'home' }
+    { path: '**', redirectTo: 'home' },
   ];
 
   beforeEach(() => {
@@ -57,6 +62,8 @@ describe('HomeComponent', () => {
 
   it('should go on subjectVsReplaysubjectVsBeehaviorsubject page', waitForAsync(() => {
     component.subjectVsReplaysubjectVsBeehaviorsubjectClick();
-    expect(router.navigate).toHaveBeenCalledWith(['/subjectvsreplaysubjectvsbeehaviorsubject']);
+    expect(router.navigate).toHaveBeenCalledWith([
+      '/subjectvsreplaysubjectvsbeehaviorsubject',
+    ]);
   }));
 });

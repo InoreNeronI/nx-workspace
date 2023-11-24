@@ -10,7 +10,9 @@ describe('SubjectVsReplaysubjectVsBeehaviorsubjectComponent', () => {
     TestBed.configureTestingModule({
       imports: [SubjectVsReplaysubjectVsBeehaviorsubjectComponent],
     });
-    fixture = TestBed.createComponent(SubjectVsReplaysubjectVsBeehaviorsubjectComponent);
+    fixture = TestBed.createComponent(
+      SubjectVsReplaysubjectVsBeehaviorsubjectComponent,
+    );
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

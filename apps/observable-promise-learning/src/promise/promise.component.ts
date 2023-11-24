@@ -6,7 +6,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './promise.component.html',
   styleUrls: ['./promise.component.scss'],
   standalone: true,
-  imports: [NgIf]
+  imports: [NgIf],
 })
 export class PromiseComponent implements OnInit {
   public isOnline: boolean = false;
@@ -25,7 +25,7 @@ export class PromiseComponent implements OnInit {
       },
       () => {
         console.log('Promise complete!');
-      }
+      },
     );
   }
 
@@ -49,5 +49,4 @@ export class PromiseComponent implements OnInit {
       this.status = 'offline';
     }
   }
-
 }

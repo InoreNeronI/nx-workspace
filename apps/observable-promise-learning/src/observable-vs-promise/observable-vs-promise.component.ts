@@ -48,7 +48,7 @@ export class ObservableVsPromiseComponent {
       (error: any) => {},
       () => {
         console.log('Observable complete!');
-      }
+      },
     );
 
     this.myPromise.then(
@@ -58,7 +58,7 @@ export class ObservableVsPromiseComponent {
       (error: any) => {},
       () => {
         console.log('Promise complete!');
-      }
+      },
     );
   }
 

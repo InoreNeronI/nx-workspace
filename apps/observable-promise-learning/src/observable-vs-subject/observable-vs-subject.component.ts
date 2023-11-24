@@ -42,5 +42,4 @@ export class ObservableVsSubjectComponent {
     // mySubject.next("Subject Hello world!");
     mySubject.next(Math.floor(Math.random() * 99) + 1);
   }
-
 }

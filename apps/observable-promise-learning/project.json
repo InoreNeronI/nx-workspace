@@ -19,7 +19,7 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/observable-promise-learning/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}]
+        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }]
       },
       "configurations": {
         "production": {
@@ -72,7 +72,7 @@
         "polyfills": ["zone.js", "zone.js/testing"],
         "tsConfig": "apps/observable-promise-learning/tsconfig.spec.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}]
+        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }]
       }
     }
   }

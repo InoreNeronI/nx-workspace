@@ -16,9 +16,15 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/responsive-layout/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
-        "styles": ["apps/responsive-layout/assets/styles/responsive-layout.scss"],
-        "scripts": [{"input": "apps/responsive-layout/assets/scripts/responsive-layout.js"}]
+        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }],
+        "styles": [
+          "apps/responsive-layout/assets/styles/responsive-layout.scss"
+        ],
+        "scripts": [
+          {
+            "input": "apps/responsive-layout/assets/scripts/responsive-layout.js"
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -71,9 +77,15 @@
         "buildTarget": "responsive-layout:build",
         "tsConfig": "apps/responsive-layout/tsconfig.spec.json",
         "inlineStyleLanguage": "scss",
-        "assets": [{"glob": "*.*", "input": "apps/.dist", "output": ""}],
-        "styles": ["apps/responsive-layout/assets/styles/responsive-layout.scss"],
-        "scripts": [{"input": "apps/responsive-layout/assets/scripts/responsive-layout.js"}]
+        "assets": [{ "glob": "*.*", "input": "apps/.dist", "output": "" }],
+        "styles": [
+          "apps/responsive-layout/assets/styles/responsive-layout.scss"
+        ],
+        "scripts": [
+          {
+            "input": "apps/responsive-layout/assets/scripts/responsive-layout.js"
+          }
+        ]
       }
     }
   }

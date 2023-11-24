@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 
 import { PromiseComponent } from './promise.component';
 
@@ -8,7 +13,7 @@ describe('PromiseComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [PromiseComponent]
+      imports: [PromiseComponent],
     });
     fixture = TestBed.createComponent(PromiseComponent);
     component = fixture.componentInstance;
@@ -45,5 +50,4 @@ describe('PromiseComponent', () => {
     });
     expect(component.isOnline).toBe(true);
   }));
-
 });

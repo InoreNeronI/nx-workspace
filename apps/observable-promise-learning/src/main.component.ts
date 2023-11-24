@@ -5,6 +5,6 @@ import { RouterOutlet } from '@angular/router';
   selector: 'nx-main',
   template: '<router-outlet></router-outlet>',
   standalone: true,
-  imports: [RouterOutlet]
+  imports: [RouterOutlet],
 })
 export class MainComponent {}

@@ -5,8 +5,8 @@ import { MainComponent } from './main.component';
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MainComponent]
-    })
+      imports: [RouterTestingModule, MainComponent],
+    }),
   );
 
   it('should create the observable-promise-learning', () => {

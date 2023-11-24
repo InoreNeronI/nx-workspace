@@ -3,11 +3,12 @@ import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'observable-promise-learning-subject-vs-replaysubject-vs-beehaviorsubject',
+  selector:
+    'observable-promise-learning-subject-vs-replaysubject-vs-beehaviorsubject',
   templateUrl: './subject-vs-replaysubject-vs-beehaviorsubject.component.html',
   styleUrls: ['./subject-vs-replaysubject-vs-beehaviorsubject.component.scss'],
   standalone: true,
-  imports: [NgFor]
+  imports: [NgFor],
 })
 export class SubjectVsReplaysubjectVsBeehaviorsubjectComponent {
   public myData: any[] = [];
@@ -35,7 +36,7 @@ export class SubjectVsReplaysubjectVsBeehaviorsubjectComponent {
   }
 
   public getData(): void {
-    console.log("Subscribed!");
+    console.log('Subscribed!');
     this.subject.subscribe((data: any) => {
       this.myData.push(data);
     });

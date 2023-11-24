@@ -5,7 +5,7 @@ describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [MainComponent],
-    })
+    }),
   );
 
   it('should create the responsive-layout', () => {

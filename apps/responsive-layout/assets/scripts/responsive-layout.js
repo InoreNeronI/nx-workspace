@@ -2,7 +2,7 @@ const root = document.documentElement;
 const storage = window.localStorage;
 
 const icon_screen = document.querySelector('.screen i');
-const setScreen = screen => {
+const setScreen = (screen) => {
   if (screen === 'normal') {
     root.classList.remove('fullscreen');
     root.classList.add('normal');
@@ -26,11 +26,11 @@ setScreen(storage.getItem('screen') || 'normal');
 
 const chooser_theme = document.querySelector('.theme');
 chooser_theme.value = storage.getItem('theme') || 'high';
-chooser_theme.onchange = e => {
+chooser_theme.onchange = (e) => {
   storage.setItem('theme', e.target.value);
   let themes = ['fire', 'earth', 'air', 'water', 'high'];
   themes.splice(themes.indexOf(e.target.value), 1);
-  themes.forEach(theme=> root.classList.remove(theme));
+  themes.forEach((theme) => root.classList.remove(theme));
   root.classList.add(e.target.value);
 };
 chooser_theme.dispatchEvent(new Event('change'));
@@ -44,10 +44,10 @@ const setToggle = (toggle) => {
     storage.setItem('toggle', 'inset');
     icon_toggle.classList.remove('bi-toggle2-on');
     icon_toggle.classList.add('bi-toggle2-off');
-    images.forEach(el => el.style.filter = 'invert(0)');
+    images.forEach((el) => (el.style.filter = 'invert(0)'));
   } else {
     if (toggle === 'reverse') {
-      images.forEach(el => el.style.filter = 'invert(1)');
+      images.forEach((el) => (el.style.filter = 'invert(1)'));
     }
     root.classList.remove('inset');
     root.classList.add('reverse');
@@ -63,12 +63,12 @@ document.querySelector('.toggle').onclick = () => {
 };
 setToggle(storage.getItem('toggle') || 'inset');
 
-(new URL(document.location)).searchParams.forEach((value, key) => {
+new URL(document.location).searchParams.forEach((value, key) => {
   switch (key) {
     case 'r':
       //console.log('refresh screen');
       // TODO refresh
-      break;/*
+      break; /*
         default:
             console.log('no url parameters');
             break;*/

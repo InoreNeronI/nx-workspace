@@ -37,7 +37,7 @@ export class ObservableComponent implements OnInit {
       },
       () => {
         console.log('Observable complete!');
-      }
+      },
     );
     // console.log(this.data);
   }
